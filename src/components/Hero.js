@@ -2,11 +2,13 @@ import useDidMountEffect from "./useDidMountEffect";
 
 const Hero = () => {
   console.log("outside");
-  let intro = document.querySelector(".intro");
+
   setTimeout(() => {
+    let intro = document.querySelector(".intro");
     console.log("first");
     intro.classList.add("hidden");
   }, 3000);
+
   useDidMountEffect(() => {
     let intro = document.querySelector(".intro");
     console.log("?");

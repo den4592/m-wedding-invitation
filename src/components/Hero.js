@@ -5,10 +5,10 @@ const Hero = () => {
     let intro = document.querySelector(".intro");
     setTimeout(() => {
       intro.classList.add("hidden");
-      setTimeout(() => {
-        intro.parentNode.removeChild(intro);
-      }, 3000);
     }, 3500);
+    window.addEventListener("DOMContentLoaded", () => {
+      intro.parentNode.removeChild(intro);
+    });
   }, []);
 
   return (

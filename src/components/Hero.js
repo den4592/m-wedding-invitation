@@ -9,18 +9,11 @@ const Hero = () => {
     intro.classList.add("hidden");
   }, 3000);
 
-  useDidMountEffect(() => {
+  setTimeout(() => {
     let intro = document.querySelector(".intro");
-    console.log("?");
-    setTimeout(() => {
-      console.log("first");
-      intro.classList.add("hidden");
-    }, 3000);
-    setTimeout(() => {
-      console.log("second");
-      intro.parentNode.removeChild(intro);
-    }, 4500);
-  }, []);
+    console.log("second");
+    intro.parentNode.removeChild(intro);
+  }, 4500);
 
   return (
     <section className="section1 section">

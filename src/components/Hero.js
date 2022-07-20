@@ -1,6 +1,7 @@
 import useDidMountEffect from "./useDidMountEffect";
 
 const Hero = () => {
+  console.log("outside");
   useDidMountEffect(() => {
     let intro = document.querySelector(".intro");
     console.log("?");

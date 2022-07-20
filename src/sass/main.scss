@@ -1,0 +1,213 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "MapoFlowerIsland";
+  src: url("/src/fonts/MapoFlowerIsland.ttf") format("truetype");
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "MapoFlowerIsland";
+  background-color: #a5c3dc;
+}
+
+.intro {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(165, 195, 220, 1) 100%
+  );
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+
+  &-name {
+    padding-bottom: 0.5rem;
+  }
+
+  &-text-container {
+    width: 30rem;
+    height: 30rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-image: url("/src/img/flowers-border.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: showFlowers 2s ease-in;
+  }
+
+  &-text {
+    font-size: 2rem;
+    font-weight: lighter;
+  }
+
+  &-name {
+    animation: bottom-top 2s ease-in;
+  }
+
+  &-additional {
+    animation: bottom-top 2s ease-in;
+  }
+
+  @keyframes showFlowers {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes bottom-top {
+    0% {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.hidden {
+  // animation: fadeOut 2s;
+  transition: opacity 0.7s ease-in;
+  opacity: 0;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.section {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  max-width: 460px;
+  padding: 0 2rem;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+/*Hero*/
+
+.hero {
+  width: 100%;
+  height: 39.375rem;
+
+  &-img-container {
+    width: 100%;
+    max-width: 460px;
+    min-height: 100%;
+    margin: 0 auto;
+    box-shadow: 25px 25px 50px 0 white inset, -25px -25px 50px 0 white inset;
+    background-image: url("../img/DSC_1531.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+@for $i from 1 through 30 {
+  @keyframes particle-animation-#{$i} {
+    100% {
+      transform: translate3d(
+        (random(90) * 1vw),
+        (random(90) * 1vh),
+        (random(100) * 1px)
+      );
+    }
+  }
+
+  .particle:nth-child(#{$i}) {
+    animation: particle-animation-#{$i} 60s infinite;
+    $size: random(5) + 5 + px;
+    opacity: random(100) / 100;
+    height: $size;
+    width: $size;
+    animation-delay: -$i * 0.1s;
+    transform: translate3d(
+      (random(90) * 1vw),
+      (random(90) * 1vh),
+      (random(100) * 1px)
+    );
+    background: white;
+  }
+}
+
+/*Main*/
+.main {
+  width: 100%;
+  font-weight: lighter;
+  text-align: center;
+  &-title {
+    font-size: 2rem;
+    padding: 3rem 0;
+    font-weight: lighter;
+    border-bottom: 2px solid #a5c3dc;
+  }
+  &-text {
+    padding: 5rem 0;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    transition: opacity 1s ease-in;
+    opacity: 1;
+  }
+}
+
+table {
+  margin: 0 auto;
+  tr {
+    text-align: center;
+  }
+}
+
+/*Dday*/
+.dday {
+  width: 100%;
+  height: 100vh;
+}
+
+/*Album*/
+.album {
+  width: 100%;
+  height: 100vh;
+}
+
+/*Location*/
+.location {
+  width: 100%;
+  height: 100vh;
+}
+
+/*GuestBook*/
+.guest-book {
+  width: 100%;
+  height: 100vh;
+}

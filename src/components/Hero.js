@@ -4,11 +4,13 @@ const Hero = () => {
   useDidMountEffect(() => {
     let intro = document.querySelector(".intro");
     setTimeout(() => {
+      console.log("first");
       intro.classList.add("hidden");
-    }, 3500);
-    window.addEventListener("DOMContentLoaded", () => {
+    }, 3000);
+    setTimeout(() => {
+      console.log("second");
       intro.parentNode.removeChild(intro);
-    });
+    }, 4500);
   }, []);
 
   return (

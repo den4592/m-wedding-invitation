@@ -1,9 +1,9 @@
 const Hero = () => {
   setTimeout(() => {
     let intro = document.querySelector(".intro");
-    console.log("first");
     intro.classList.add("hidden");
   }, 4500);
+
   setTimeout(() => {
     let intro = document.querySelector(".intro");
     let hero = document.querySelector(".hero");

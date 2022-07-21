@@ -4,6 +4,11 @@ const Hero = () => {
     console.log("first");
     intro.classList.add("hidden");
   }, 4500);
+  setTimeout(() => {
+    let intro = document.querySelector(".intro");
+    let hero = document.querySelector(".hero");
+    hero.removeChild(intro);
+  }, 6000);
 
   return (
     <section className="section1 section">

@@ -1,5 +1,3 @@
-import useDidMountEffect from "./useDidMountEffect";
-
 const Hero = () => {
   console.log("outside");
 

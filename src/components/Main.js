@@ -57,8 +57,8 @@ const Main = () => {
       <div className="container">
         <div className="main">
           <h2 className="main-title">이병주 & 신일선</h2>
-          <p className="main-text">
-            <div ref={showingText1}>
+          <div className="main-text">
+            <div ref={showingText1} className="main-text-container">
               <span>창으로 비쳐오는 햇살,</span>
               <br />
               <span>발밑의 풀 하나,</span>
@@ -68,7 +68,7 @@ const Main = () => {
               <br />
             </div>
 
-            <div ref={showingText2}>
+            <div ref={showingText2} className="main-text-container">
               <span>매 순간을</span>
               <br />
               <span>가벼이 지나치지 않고</span>
@@ -84,13 +84,13 @@ const Main = () => {
               <br />
             </div>
 
-            <div ref={showingText3}>
+            <div ref={showingText3} className="main-text-container">
               <span>결혼식에 참석해 주셔서</span>
               <br />
               <span>많은 축하 부탁드립니다.</span>
               <br />
             </div>
-          </p>
+          </div>
         </div>
       </div>
     </section>

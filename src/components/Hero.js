@@ -7,7 +7,9 @@ const Hero = () => {
   setTimeout(() => {
     let intro = document.querySelector(".intro");
     let hero = document.querySelector(".hero");
-    hero.removeChild(intro);
+    if (intro) {
+      hero.removeChild(intro);
+    }
   }, 8000);
 
   return (

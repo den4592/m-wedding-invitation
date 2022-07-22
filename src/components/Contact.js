@@ -53,7 +53,7 @@ const Contact = () => {
         ref={modalBackground}
         onClick={closeModal}
       ></div>
-      {modalIsOpen ? (
+      {modalIsOpen && (
         <div className="modal">
           <div className="modal-header">
             <strong>
@@ -100,8 +100,6 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      ) : (
-        console.log("nope")
       )}
     </section>
   );

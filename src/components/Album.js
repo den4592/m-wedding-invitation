@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css";
@@ -12,12 +13,33 @@ import img7 from "../img/7.jpg";
 import img8 from "../img/8.jpg";
 import img9 from "../img/9.jpg";
 import img10 from "../img/10.jpg";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Album = () => {
+  const showingText1 = useRef(null);
+
+  useEffect(() => {
+    const el1 = showingText1.current;
+    gsap.fromTo(
+      el1,
+      { opacity: 0, y: 200 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 2,
+        scrollTrigger: {
+          trigger: el1,
+        },
+      }
+    );
+  });
+
   return (
     <section className="section4 section">
       <div className="container">
-        <div className="album">
+        <div className="album" ref={showingText1}>
           <h2 className="album-title">앨범</h2>
           <Swiper
             slidesPerView={"auto"}

@@ -8,7 +8,7 @@ import GuestBook from "./GuestBook";
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Hero />
       <Main />
       <Dday />

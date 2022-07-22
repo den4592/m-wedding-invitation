@@ -51,8 +51,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    -webkit-animation: fadeinout 4s ease-in forwards;
-    animation: fadeinout 4s ease-in forwards;
+    -webkit-animation: fadeinout 5s ease-in forwards;
+    animation: fadeinout 5s ease-in forwards;
   }
 
   /*Intro media query*/
@@ -67,12 +67,12 @@ body {
 
   &-name {
     font-size: clamp(1.2rem, 1.5vw, 2vw);
-    animation: bottom-top 2s ease-in;
+    animation: bottom-top 3s ease-in;
   }
 
   &-additional {
     font-size: clamp(1.2rem, 1.5vw, 2vw);
-    animation: bottom-top 2s ease-in;
+    animation: bottom-top 3s ease-in;
   }
 
   @-webkit-keyframes fadeinout {
@@ -211,7 +211,8 @@ body {
   font-size: 1.1rem;
   width: 100%;
   text-align: center;
-  padding: 8rem 0;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
 
   .husband-parents {
     padding-bottom: 1rem;
@@ -310,23 +311,139 @@ table {
 /*Dday*/
 .dday {
   width: 100%;
-  height: 100vh;
+  text-align: center;
+  .calendar {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 /*Album*/
 .album {
   width: 100%;
-  height: 100vh;
+  height: 45rem;
+  text-align: center;
+  padding: 3rem 0;
+
+  &-title {
+    padding-bottom: 1rem;
+  }
 }
 
 /*Location*/
 .location {
   width: 100%;
-  height: 100vh;
+  text-align: center;
+  padding: 5rem 0;
+  &-main {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  &-tel {
+    padding: 1rem 0;
+  }
+  a {
+    text-decoration: none;
+    &:hover {
+      opacity: 0.7;
+      transition: opacity 0.5s;
+    }
+  }
+  .icons {
+    list-style: none;
+    display: flex;
+    .icon {
+      &-inner {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .icon + .icon {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.map-container {
+  padding: 1rem 0;
+}
+
+.d-bus-guide {
+  &-title {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.guides {
+  list-style: none;
+  text-align: left;
+  &-title {
+    padding: 1rem 0;
+  }
+  .bus-container {
+    padding: 1rem 0;
+  }
+  ul {
+    padding: 0 1rem;
+  }
+
+  .guides-detail-text {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+    color: gray;
+    text-align: left;
+  }
 }
 
 /*GuestBook*/
 .guest-book {
   width: 100%;
   height: 100vh;
+}
+
+/*Swiper*/
+.swiper {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.swiper-slide {
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide:nth-child(2n) {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide:nth-child(3n) {
+  width: 100%;
+  height: 100%;
 }

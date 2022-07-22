@@ -2,13 +2,13 @@ const Hero = () => {
   setTimeout(() => {
     let intro = document.querySelector(".intro");
     intro.classList.add("hidden");
-  }, 4500);
+  }, 6000);
 
   setTimeout(() => {
     let intro = document.querySelector(".intro");
     let hero = document.querySelector(".hero");
     hero.removeChild(intro);
-  }, 6000);
+  }, 8000);
 
   return (
     <section className="section1 section">

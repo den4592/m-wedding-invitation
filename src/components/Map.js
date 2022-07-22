@@ -1,28 +1,65 @@
 /*global kakao*/
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
+import styled from "styled-components";
 
 const Map = () => {
-  useEffect(() => {
-    var container = document.getElementById("map");
-    var options = {
-      center: new kakao.maps.LatLng(36.6070385, 127.420712),
-      level: 4,
-    };
+  const [kakaoMap, setKakaoMap] = useState(null);
+  const container = useRef(null);
 
-    var map = new kakao.maps.Map(container, options);
+  const initMap = () => {
+    const center = new kakao.maps.LatLng(36.6070385, 127.420712);
+    const options = {
+      center,
+      level: 8,
+    };
+    const map = new kakao.maps.Map(container.current, options);
+    setKakaoMap(map);
+
     var markerPosition = new kakao.maps.LatLng(36.6070385, 127.420712);
     var marker = new kakao.maps.Marker({
       position: markerPosition,
     });
     marker.setMap(map);
+  };
+
+  useEffect(() => {
+    initMap();
   }, []);
 
-  return (
-    <div
-      id="map"
-      style={{ width: "100%", height: "300px", zIndex: "0", margin: "0 auto" }}
-    ></div>
-  );
+  return <MapContainer id="KakaoMap" ref={container} />;
 };
 
+const MapContainer = styled.div`
+  width: 100%;
+  height: 300px;
+  zindex: 0;
+  margin: 0 auto;
+`;
+
 export default Map;
+
+// const Map = () => {
+//   useEffect(() => {
+//     var container = document.getElementById("map");
+//     var options = {
+//       center: new kakao.maps.LatLng(36.6070385, 127.420712),
+//       level: 4,
+//     };
+
+//     var map = new kakao.maps.Map(container, options);
+//     var markerPosition = new kakao.maps.LatLng(36.6070385, 127.420712);
+//     var marker = new kakao.maps.Marker({
+//       position: markerPosition,
+//     });
+//     marker.setMap(map);
+//   }, []);
+
+//   return (
+//     <div
+//       id="map"
+//       style={{ width: "100%", height: "300px", zIndex: "0", margin: "0 auto" }}
+//     ></div>
+//   );
+// };
+
+// export default Map;

@@ -4,6 +4,7 @@ import Main from "./Main";
 import Dday from "./Dday";
 import Album from "./Album";
 import Location from "./Location";
+import BankAccount from "./BankAccount";
 import GuestBook from "./GuestBook";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Dday />
       <Album />
       <Location />
+      <BankAccount />
       <GuestBook />
     </div>
   );

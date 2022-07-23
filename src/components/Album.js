@@ -42,7 +42,6 @@ const Album = () => {
         <div className="album" ref={showingText1}>
           <h2 className="album-title">앨범</h2>
           <Swiper
-            slidesPerView={"auto"}
             centeredSlides={true}
             pagination={{
               clickable: true,

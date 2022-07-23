@@ -491,7 +491,7 @@ table {
 /*Swiper*/
 .swiper {
   width: 100%;
-  height: 32rem;
+  height: 35rem;
   background-color: #fff;
   border-radius: 4px;
 }
@@ -514,20 +514,4 @@ table {
 
 .swiper-slide img {
   width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  width: 100%;
-  height: 100%;
-
-  &:nth-child(6) {
-    height: 50%;
-
-    top: 25%;
-  }
-  &:nth-last-child(1) {
-    height: 50%;
-    top: 25%;
-  }
 }

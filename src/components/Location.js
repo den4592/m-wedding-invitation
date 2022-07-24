@@ -39,6 +39,7 @@ const Location = () => {
           <a href="http://amourart.co.kr" target="_blank">
             <p className="location-url">www.amourart.co.kr</p>
           </a>
+
           <div className="map-container">
             <Map />
           </div>
@@ -132,6 +133,9 @@ const Location = () => {
                 <li className="guides-detail-text">
                   오송역 하차 후 버스대중교통 (511번 이용 후 강서1동정류장에서
                   812나 419번 이용) 및 택시 이용
+                </li>
+                <li className="guides-detail-text">
+                  KTX 오송역 하차 시 택시 15분 소요
                 </li>
               </ul>
             </div>

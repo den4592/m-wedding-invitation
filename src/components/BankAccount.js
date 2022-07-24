@@ -64,6 +64,9 @@ const BankAccount = () => {
               </li>
             </ul>
           </div>
+          <p className="congrats-flowers">
+            '예식장의 규정으로 축하화환은 정중히 사양합니다'
+          </p>
         </div>
       </div>
     </section>

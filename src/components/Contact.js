@@ -91,11 +91,11 @@ const Contact = () => {
               </div>
               <div className="f-tel ">
                 <p>신동준</p>
-                <p>010-0000-0000</p>
+                <p>010-9288-6550</p>
               </div>
               <div className="m-tel ">
                 <p>장경미</p>
-                <p>010-0000-0000</p>
+                <p>010-9288-6550</p>
               </div>
             </div>
           </div>

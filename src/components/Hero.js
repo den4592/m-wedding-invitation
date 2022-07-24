@@ -1,5 +1,6 @@
 const Hero = () => {
   setTimeout(() => {
+    window.scrollTo(0, 0);
     let intro = document.querySelector(".intro");
     intro.classList.add("hidden");
   }, 6000);

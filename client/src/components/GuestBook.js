@@ -3,8 +3,6 @@ import GuestData from "./GuestData";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 
-const URL = "http://localhost:3001/guesttext";
-
 const GuestBook = () => {
   const [guestText, setGuestText] = useState([]);
   const [name, setName] = useState("");
@@ -13,7 +11,7 @@ const GuestBook = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/guesttext", {
+      .post("https://m-wedding-invitation.herokuapp.com/guesttext", {
         name: name,
         text: text,
       })
@@ -34,7 +32,7 @@ const GuestBook = () => {
   //data fetch
   useEffect(() => {
     axios
-      .get("http://localhost:3001/read")
+      .get("https://m-wedding-invitation.herokuapp.com/read")
       .then((response) => {
         setGuestText(response.data);
       })

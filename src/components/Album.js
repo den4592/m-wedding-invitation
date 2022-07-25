@@ -13,6 +13,16 @@ import img7 from "../img/7.jpg";
 import img8 from "../img/8.jpg";
 import img9 from "../img/9.jpg";
 import img10 from "../img/10.jpg";
+import img11 from "../img/11.jpeg";
+import img12 from "../img/12.jpeg";
+import img13 from "../img/13.jpeg";
+import img14 from "../img/14.jpeg";
+import img15 from "../img/15.jpeg";
+import img16 from "../img/16.jpeg";
+import img17 from "../img/17.jpeg";
+import img18 from "../img/18.jpeg";
+import img19 from "../img/19.jpeg";
+import img20 from "../img/20.jpeg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -78,6 +88,36 @@ const Album = () => {
             </SwiperSlide>
             <SwiperSlide>
               <img src={img10} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img11} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img12} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img13} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img14} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img15} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img16} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img17} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img18} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img19} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src={img20} />
             </SwiperSlide>
           </Swiper>
         </div>

@@ -321,6 +321,8 @@ table {
     width: 100%;
     height: 100%;
   }
+  padding-bottom: 6rem;
+  border-bottom: 1px solid #a5c3dc;
 }
 
 /*Album*/
@@ -328,7 +330,7 @@ table {
   width: 100%;
   height: 40rem;
   text-align: center;
-  padding: 8rem 0;
+  padding: 5rem 0;
 
   &-title {
     padding-bottom: 1rem;
@@ -340,6 +342,7 @@ table {
   width: 100%;
   text-align: center;
   padding: 8rem 0;
+  border-bottom: 1px solid #a5c3dc;
 
   &-main {
     padding-top: 2rem;
@@ -408,6 +411,7 @@ table {
 .bank-account {
   width: 100%;
   text-align: center;
+  padding: 6rem 0;
   h2 {
     font-size: 1.2rem;
   }
@@ -490,7 +494,55 @@ table {
 /*GuestBook*/
 .guest-book {
   width: 100%;
-  height: 100vh;
+
+  h2 {
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+  form {
+    border: 1px solid #ddd;
+    display: flex;
+    border-radius: 4px;
+    flex-direction: column;
+    padding: 1rem;
+    input[type="text"] {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ddd;
+      &:focus {
+        outline-color: #a5c3dc;
+      }
+    }
+    textarea {
+      resize: none;
+      padding: 0.5rem;
+      max-height: 7rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      &:focus {
+        outline-color: #a5c3dc;
+      }
+    }
+    .submit-btn {
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: none;
+      background-color: #a5c3dc;
+      &:hover {
+        opacity: 0.7;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.guest-data {
+  overflow-y: scroll;
+  margin: 1rem 0;
+  min-height: 10rem;
+  border: 1px solid #ddd;
 }
 
 /*Swiper*/
@@ -499,37 +551,48 @@ table {
   height: 35rem;
   background-color: #fff;
   border-radius: 4px;
-}
-
-.swiper-slide {
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-}
-
-//auto냐 100이냐
-.swiper-slide img {
-  width: 100%;
-  height: auto;
-}
-
-.swiper-slide {
-  &:nth-child(6) {
-    height: 50%;
-    top: 25%;
-  }
-  &:nth-child(10) {
-    height: 50%;
-    top: 25%;
+  &-slide {
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    // &:nth-child(6) {
+    //   height: 50%;
+    //   top: 25%;
+    // }
+    // &:nth-child(10) {
+    //   height: 50%;
+    //   top: 25%;
+    // }
+    // &:nth-child(11) {
+    //   height: 50%;
+    //   top: 25%;
+    // }
+    // &:nth-child(12) {
+    //   height: 50%;
+    //   top: 25%;
+    // }
+    // &:nth-child(13) {
+    //   height: 50%;
+    //   top: 25%;
+    // }
+    // &:nth-child(14) {
+    //   height: 50%;
+    //   top: 25%;
+    // }
+    //auto냐 100이냐
+    & img {
+      width: 100%;
+      height: auto;
+    }
   }
 }

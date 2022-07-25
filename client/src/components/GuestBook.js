@@ -3,7 +3,7 @@ import GuestData from "./GuestData";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 
-const url = "http://localhost:3001/api";
+const URL = "http://localhost:3001/guesttext";
 
 const GuestBook = () => {
   const [guestText, setGuestText] = useState([]);
@@ -13,23 +13,19 @@ const GuestBook = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(url, { name: name, text: text })
-      .then((resp) => {
-        console.log("post", resp.data);
+      .post("http://localhost:3001/guesttext", {
+        name: name,
+        text: text,
       })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    axios
-      .get(url)
-      .then((resp) => {
-        let data = resp.data;
-        console.log("get", data);
-        setGuestText(data);
-      })
-      .catch((error) => {
-        console.log(error);
+      .then((response) => {
+        setGuestText([
+          ...guestText,
+          {
+            id: response.data.id,
+            name: name,
+            text: text,
+          },
+        ]);
       });
     setName("");
     setText("");
@@ -38,16 +34,14 @@ const GuestBook = () => {
   //data fetch
   useEffect(() => {
     axios
-      .get(url)
-      .then((resp) => {
-        let data = resp.data;
-        console.log("get", data);
-        setGuestText(data);
+      .get("http://localhost:3001/read")
+      .then((response) => {
+        setGuestText(response.data);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
+        console.log("error");
       });
-  }, []);
+  }, [guestText]);
 
   return (
     <section className="section6 section">

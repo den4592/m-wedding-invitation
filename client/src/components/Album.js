@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Navigation, Pagination } from "swiper";
 import "swiper/css";
+import "swiper/css/navigation";
 import "swiper/css/pagination";
 import img1 from "../img/1.jpg";
 import img2 from "../img/2.jpg";
@@ -12,10 +13,10 @@ import img6 from "../img/6.jpg";
 import img7 from "../img/7.jpg";
 import img8 from "../img/8.jpg";
 import img9 from "../img/9.jpg";
-import img10 from "../img/10.jpg";
+import img10 from "../img/10.jpeg";
 import img11 from "../img/11.jpeg";
 import img12 from "../img/12.jpeg";
-import img13 from "../img/13.jpeg";
+import img13 from "../img/13.jpg";
 import img14 from "../img/14.jpeg";
 import img15 from "../img/15.jpeg";
 import img16 from "../img/16.jpeg";
@@ -28,19 +29,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Album = () => {
-  const showingText1 = useRef(null);
+  const showingText = useRef(null);
 
   useEffect(() => {
-    const el1 = showingText1.current;
     gsap.fromTo(
-      el1,
+      showingText.current,
       { opacity: 0, y: 200 },
       {
         y: 0,
         opacity: 1,
         duration: 2,
         scrollTrigger: {
-          trigger: el1,
+          trigger: showingText.current,
         },
       }
     );
@@ -49,14 +49,16 @@ const Album = () => {
   return (
     <section className="section4 section">
       <div className="container">
-        <div className="album" ref={showingText1}>
+        <div className="album" ref={showingText}>
           <h2 className="album-title">앨범</h2>
           <Swiper
             centeredSlides={true}
             pagination={{
               clickable: true,
             }}
-            modules={[Pagination]}
+            effect={"fade"}
+            navigation={true}
+            modules={[Navigation, Pagination]}
             className="mySwiper"
           >
             <SwiperSlide>

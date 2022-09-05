@@ -1,15 +1,25 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import GuestData from "./GuestData";
-import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
+import gsap from "gsap";
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const GuestBook = () => {
   const [guestText, setGuestText] = useState([]);
   const [name, setName] = useState("");
   const [text, setText] = useState("");
+  const showingText = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (name === "" || text === "") {
+      setName("");
+      setText("");
+      alert("성함과 내용을 모두 작성해 주세요.");
+      return;
+    }
     axios
       .post("https://m-wedding-invitation.herokuapp.com/guesttext", {
         name: name,
@@ -29,6 +39,21 @@ const GuestBook = () => {
     setText("");
   };
 
+  useEffect(() => {
+    gsap.fromTo(
+      showingText.current,
+      { opacity: 0, y: 200 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 2,
+        scrollTrigger: {
+          trigger: showingText.current,
+        },
+      }
+    );
+  }, []);
+
   //data fetch
   useEffect(() => {
     axios
@@ -39,12 +64,12 @@ const GuestBook = () => {
       .catch(() => {
         console.log("error");
       });
-  }, [guestText]);
+  }, []);
 
   return (
     <section className="section6 section">
       <div className="container">
-        <div className="guest-book">
+        <div className="guest-book" ref={showingText}>
           <h2>방명록 </h2>
           <form onSubmit={handleSubmit}>
             <input
@@ -54,7 +79,7 @@ const GuestBook = () => {
               onChange={(e) => setName(e.target.value)}
             />
             <textarea
-              placeholder="내용을 입력해 주세요."
+              placeholder="전하고 싶은 말."
               cols="30"
               rows="10"
               value={text}

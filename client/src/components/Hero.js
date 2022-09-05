@@ -1,6 +1,12 @@
+import { useEffect } from "react";
+import Music from "./Music";
+
 const Hero = () => {
+  useEffect(() => {
+    window.history.scrollRestoration = "manual";
+  }, []);
+
   setTimeout(() => {
-    window.scrollTo(0, 0);
     let intro = document.querySelector(".intro");
     intro.classList.add("hidden");
   }, 6000);
@@ -88,7 +94,9 @@ const Hero = () => {
             </p>
           </div>
         </div>
-        <div className="hero-img-container"></div>
+        <div className="hero-img-container">
+          <Music />
+        </div>
       </div>
     </section>
   );

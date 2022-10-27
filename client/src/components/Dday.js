@@ -26,7 +26,7 @@ const Dday = () => {
   });
 
   const calculateDday = () => {
-    const masTime = new Date("2022-10-29");
+    const masTime = new Date("2022-10-30");
     const todayTime = new Date();
     const diff = masTime - todayTime;
     const day = String(Math.floor(diff / (1000 * 60 * 60 * 24)));

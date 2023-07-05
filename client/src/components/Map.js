@@ -3,7 +3,6 @@ import { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 
 const { kakao } = window;
-console.log(kakao);
 
 const Map = () => {
   const container = useRef(null);

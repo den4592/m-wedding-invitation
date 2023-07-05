@@ -3,21 +3,27 @@ import Music from "./Music";
 
 const Hero = () => {
   useEffect(() => {
+    let first;
+    let second;
     window.history.scrollRestoration = "manual";
+
+    first = setTimeout(() => {
+      let intro = document.querySelector(".intro");
+      intro.classList.add("hidden");
+    }, 6000);
+
+    second = setTimeout(() => {
+      let intro = document.querySelector(".intro");
+      let hero = document.querySelector(".hero");
+      if (intro) {
+        hero.removeChild(intro);
+      }
+    }, 8000);
+    return () => {
+      clearTimeout(first);
+      clearTimeout(second);
+    };
   }, []);
-
-  setTimeout(() => {
-    let intro = document.querySelector(".intro");
-    intro.classList.add("hidden");
-  }, 6000);
-
-  setTimeout(() => {
-    let intro = document.querySelector(".intro");
-    let hero = document.querySelector(".hero");
-    if (intro) {
-      hero.removeChild(intro);
-    }
-  }, 8000);
 
   return (
     <section className="section1 section">

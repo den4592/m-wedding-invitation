@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import Map from "./Map";
+import KakaoMap from "./KakaoMap";
 import kakao_map_icon from "../img/kakao_map.png";
 import naver_map_icon from "../img/naver_map.png";
 import gsap from "gsap";
@@ -40,7 +40,7 @@ const Location = () => {
           </a>
 
           <div className="map-container">
-            <Map />
+            <KakaoMap />
           </div>
 
           <ul className="icons">

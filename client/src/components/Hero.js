@@ -3,6 +3,7 @@ import Music from "./Music";
 
 const Hero = () => {
   useEffect(() => {
+    document.body.style.overflow = "hidden";
     let first;
     let second;
     window.history.scrollRestoration = "manual";
@@ -13,12 +14,13 @@ const Hero = () => {
     }, 6000);
 
     second = setTimeout(() => {
+      document.body.style.overflow = "unset";
       let intro = document.querySelector(".intro");
       let hero = document.querySelector(".hero");
       if (intro) {
         hero.removeChild(intro);
       }
-    }, 8000);
+    }, 7000);
     return () => {
       clearTimeout(first);
       clearTimeout(second);

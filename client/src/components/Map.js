@@ -1,13 +1,15 @@
-/*global kakao*/
 import { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
-
-const { kakao } = window;
+import axios from "axios";
 
 const Map = () => {
   const container = useRef(null);
 
-  const initMap = () => {
+  const initMap = async () => {
+    const kakao = await axios.get("https://dapi.kakao.com/v2/maps/sdk.js?", {
+      headers: { Authorization: "a0932da775fdc825b83a9bb691f19328" },
+    });
+    console.log(kakao);
     const center = new kakao.maps.LatLng(36.6070385, 127.420712);
     const options = {
       center,

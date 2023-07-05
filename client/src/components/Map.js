@@ -3,9 +3,9 @@ import { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 
 const { kakao } = window;
+console.log(kakao);
 
 const Map = () => {
-  const [kakaoMap, setKakaoMap] = useState(null);
   const container = useRef(null);
 
   const initMap = () => {
@@ -15,7 +15,6 @@ const Map = () => {
       level: 8,
     };
     const map = new kakao.maps.Map(container.current, options);
-    setKakaoMap(map);
 
     var markerPosition = new kakao.maps.LatLng(36.6070385, 127.420712);
     var marker = new kakao.maps.Marker({
